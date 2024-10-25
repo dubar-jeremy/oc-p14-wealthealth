@@ -1,0 +1,99 @@
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    max-width: 50%;
+    margin: 0 auto;
+    align-items: baseline;
+    gap: 2em;
+}
+
+
+.home-form-container {
+    margin: 0 auto;
+    max-width: 50%;
+}
+
+.table-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 20px 0;
+}
+
+.table-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.table-header select {
+    padding: 5px;
+}
+
+.table-pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.table-pagination .pagination-controls {
+    display: flex;
+    gap: 5px;
+}
+
+.table-pagination span {
+    margin-left: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 10px;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #f9f9f9;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+button {
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+button:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.search-bar-container {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.pagesize-selector-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.employee-form-container {
+    margin: 0 auto;
+    max-width: 75%;
+}
+
+.navigation-employees {
+    display: flex;
+    justify-content: center;
+}
