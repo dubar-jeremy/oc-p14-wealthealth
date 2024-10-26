@@ -1,5 +1,3 @@
-import * as React from "react";
-
 import EmployeesTable from "../tables/employeesTable/EmployeesTable.tsx";
 import { Link } from "react-router-dom";
 

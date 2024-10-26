@@ -18,10 +18,11 @@ import Searchbar from "./SearchBar.tsx";
 
 interface TableProps<T> {
   data: T[];
-  columns: ColumnDef<T>[];
+  columns: ColumnDef<T, string>[];
   paginate?: boolean;
   defaultSortingState?: SortingState;
 }
+
 const Table = <T,>({
   data,
   columns,

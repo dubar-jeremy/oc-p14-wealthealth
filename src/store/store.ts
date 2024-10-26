@@ -1,16 +1,13 @@
 import { EmployeeInterface } from "../interfaces/Employee.interface.ts";
-
 import { create } from "zustand";
-import { persist, devtools } from "zustand/middleware";
+import { devtools, persist } from "zustand/middleware";
 
 interface StoreStates {
   employees: EmployeeInterface[];
   addEmployee: (employee: EmployeeInterface) => void;
 }
-export const store = create<
-  StoreStates,
-  [["zustand/persist", StoreStates], ["zustand/devtools", never]]
->(
+
+export const store = create<StoreStates>()(
   devtools(
     persist(
       (set) => ({
@@ -20,7 +17,9 @@ export const store = create<
             employees: [...state.employees, employee],
           })),
       }),
-      { name: "store" },
+      {
+        name: "store", // Name for the storage
+      },
     ),
   ),
 );

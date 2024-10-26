@@ -1,7 +1,5 @@
 import { Controller, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-
-import { StateInterface, statesDataList } from "../../data/statesDataList.ts";
 import {
   departmentDataList,
   DepartmentInterface,
@@ -158,23 +156,23 @@ const CreateEmployeeForm = () => {
           </div>
 
           <div className="form-group">
-            <Controller
-              name="state"
-              control={control}
-              render={({ field }) => (
-                <Select<StateInterface>
-                  id={field.name}
-                  label="State"
-                  field={field}
-                  error={errors.state?.message}
-                  options={statesDataList}
-                  getOptionLabel={(option: StateInterface) => option.name}
-                  getOptionValue={(option: StateInterface) =>
-                    option.abbreviation
-                  }
-                />
-              )}
-            />
+            {/*<Controller*/}
+            {/*  name="state"*/}
+            {/*  control={control}*/}
+            {/*  render={({ field }) => (*/}
+            {/*    <Select<StateInterface>*/}
+            {/*      id={field.name}*/}
+            {/*      label="State"*/}
+            {/*      field={field}*/}
+            {/*      error={errors.state?.message}*/}
+            {/*      options={statesDataList}*/}
+            {/*      getOptionLabel={(option: StateInterface) => option.name}*/}
+            {/*      getOptionValue={(option: StateInterface) =>*/}
+            {/*        option.abbreviation*/}
+            {/*      }*/}
+            {/*    />*/}
+            {/*  )}*/}
+            {/*/>*/}
           </div>
 
           <div className="form-group">

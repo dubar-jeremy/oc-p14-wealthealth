@@ -1,8 +1,9 @@
-import { ControllerRenderProps, FieldValues } from "react-hook-form";
+import { ControllerRenderProps } from "react-hook-form";
 import { HTMLInputTypeAttribute } from "react";
+import { EmployeeInterface } from "../interfaces/Employee.interface.ts";
 
 interface InputProps {
-  field: ControllerRenderProps<FieldValues, string>;
+  field: ControllerRenderProps<EmployeeInterface, keyof EmployeeInterface>;
   id: string;
   label: string;
   type: HTMLInputTypeAttribute;

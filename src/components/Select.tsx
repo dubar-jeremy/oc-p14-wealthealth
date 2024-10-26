@@ -1,7 +1,8 @@
-import { ControllerRenderProps, FieldValues } from "react-hook-form";
+import { ControllerRenderProps } from "react-hook-form";
+import { EmployeeInterface } from "../interfaces/Employee.interface.ts";
 
 interface SelectStateProps<T> {
-  field: ControllerRenderProps<FieldValues, string>;
+  field: ControllerRenderProps<EmployeeInterface>;
   id: string;
   label: string;
   options: T[];
