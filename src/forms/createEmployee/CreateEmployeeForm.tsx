@@ -6,7 +6,6 @@ import {
   departmentDataList,
   DepartmentInterface,
 } from "../../data/departmentDataList.ts";
-import { ReactModal } from "react-modal-oop-project";
 import Select from "../../components/Select.tsx";
 import Input from "../../components/Input.tsx";
 
@@ -20,6 +19,7 @@ import { store } from "../../store/store.ts";
 
 import "./CreateEmployeeForm.css";
 import { useState } from "react";
+import { ReactModal } from "react-modal-oop-project";
 
 const CreateEmployeeForm = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -52,6 +52,7 @@ const CreateEmployeeForm = () => {
 
   return (
     <>
+      <button onClick={() => setIsOpen(true)}>TEST OPEN</button>
       <form
         onSubmit={handleSubmit(onSubmit)}
         id="create-employee"
@@ -220,18 +221,12 @@ const CreateEmployeeForm = () => {
       <ReactModal
         open={isOpen}
         onClose={closeModal}
+        title="Success"
+        content={<p>Employee created with success</p>}
         options={{
           shouldCloseOnOverlayClick: true,
         }}
-      >
-        <h1>Test</h1>
-        <p>
-          content hello Lorem ipsum dolor sit amet, consectetur adipisicing
-          elit. A, adipisci animi dicta dolore dolorum eos fugit in labore nisi
-          nobis non numquam quaerat quam quod, repellendus soluta tempora
-          voluptate voluptatum!
-        </p>
-      </ReactModal>
+      />
     </>
   );
 };
