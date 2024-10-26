@@ -52,7 +52,6 @@ const CreateEmployeeForm = () => {
 
   return (
     <>
-      <button onClick={() => setIsOpen(true)}>TEST OPEN</button>
       <form
         onSubmit={handleSubmit(onSubmit)}
         id="create-employee"
