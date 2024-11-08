@@ -210,7 +210,6 @@ const CreateEmployeeForm = () => {
           />
         </div>
       </form>
-      <button onClick={() => setIsOpen(true)}>open me</button>
       <ReactModal
         open={isOpen}
         onClose={closeModal}
