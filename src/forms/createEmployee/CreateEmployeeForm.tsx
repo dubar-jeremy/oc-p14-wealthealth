@@ -12,15 +12,16 @@ import {
   createEmployeeValidationSchema,
 } from "./CreateEmployeeFormConfig.ts";
 
-import { useStore } from "zustand";
-import { store } from "../../store/store.ts";
-
 import "./CreateEmployeeForm.css";
 import { useState } from "react";
 import { ReactModal } from "react-modal-oop-project";
+import { StateInterface, statesDataList } from "../../data/statesDataList.ts";
+import { store, StoreStates } from "../../store/store.ts";
 
 const CreateEmployeeForm = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const addEmployee = store((state: StoreStates) => state.addEmployee);
+
   const closeModal = () => setIsOpen(false);
   const {
     control,
@@ -40,8 +41,6 @@ const CreateEmployeeForm = () => {
     },
     resolver: yupResolver(createEmployeeValidationSchema),
   });
-
-  const { addEmployee } = useStore(store);
 
   const onSubmit = (data: CreateEmployeeFormValues) => {
     addEmployee(data);
@@ -156,23 +155,23 @@ const CreateEmployeeForm = () => {
           </div>
 
           <div className="form-group">
-            {/*<Controller*/}
-            {/*  name="state"*/}
-            {/*  control={control}*/}
-            {/*  render={({ field }) => (*/}
-            {/*    <Select<StateInterface>*/}
-            {/*      id={field.name}*/}
-            {/*      label="State"*/}
-            {/*      field={field}*/}
-            {/*      error={errors.state?.message}*/}
-            {/*      options={statesDataList}*/}
-            {/*      getOptionLabel={(option: StateInterface) => option.name}*/}
-            {/*      getOptionValue={(option: StateInterface) =>*/}
-            {/*        option.abbreviation*/}
-            {/*      }*/}
-            {/*    />*/}
-            {/*  )}*/}
-            {/*/>*/}
+            <Controller
+              name="state"
+              control={control}
+              render={({ field }) => (
+                <Select<StateInterface>
+                  id={field.name}
+                  label="State"
+                  field={field}
+                  error={errors.state?.message}
+                  options={statesDataList}
+                  getOptionLabel={(option: StateInterface) => option.name}
+                  getOptionValue={(option: StateInterface) =>
+                    option.abbreviation
+                  }
+                />
+              )}
+            />
           </div>
 
           <div className="form-group">
@@ -210,19 +209,18 @@ const CreateEmployeeForm = () => {
             )}
           />
         </div>
-
-        <button type="submit" className="submit-button">
-          Create Employee
-        </button>
       </form>
+      <button onClick={() => setIsOpen(true)}>open me</button>
       <ReactModal
         open={isOpen}
         onClose={closeModal}
-        title="Success"
+        title="Create Employee"
         content={<p>Employee created with success</p>}
         options={{
-          shouldCloseOnOverlayClick: true,
+          shouldCloseOnOverlayClick: false,
+          darkMode: true,
         }}
+        style={{ closeButtonSize: "m" }}
       />
     </>
   );

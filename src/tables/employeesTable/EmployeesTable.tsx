@@ -1,6 +1,5 @@
 import { ColumnDef, createColumnHelper } from "@tanstack/react-table";
-import { useStore } from "zustand/index";
-import { store } from "../../store/store.ts";
+import { store, StoreStates } from "../../store/store.ts";
 import { EmployeeInterface } from "../../interfaces/Employee.interface.ts";
 import Table from "../../components/table/Table.tsx";
 
@@ -9,7 +8,7 @@ interface EmployeesTableProps {
 }
 
 const EmployeesTable = ({ paginate }: EmployeesTableProps) => {
-  const { employees } = useStore(store);
+  const employees = store((state: StoreStates) => state.employees);
 
   const columnHelper = createColumnHelper<EmployeeInterface>();
 

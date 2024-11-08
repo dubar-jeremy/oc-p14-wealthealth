@@ -2,7 +2,7 @@ import { EmployeeInterface } from "../interfaces/Employee.interface.ts";
 import { create } from "zustand";
 import { devtools, persist } from "zustand/middleware";
 
-interface StoreStates {
+export interface StoreStates {
   employees: EmployeeInterface[];
   addEmployee: (employee: EmployeeInterface) => void;
 }
