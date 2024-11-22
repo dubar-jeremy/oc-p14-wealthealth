@@ -209,6 +209,9 @@ const CreateEmployeeForm = () => {
             )}
           />
         </div>
+        <button type="submit" className="submit-button">
+          Create Employee
+        </button>
       </form>
       <ReactModal
         open={isOpen}
