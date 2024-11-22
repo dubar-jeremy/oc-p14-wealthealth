@@ -219,8 +219,7 @@ const CreateEmployeeForm = () => {
         title="Create Employee"
         content={<p>Employee created with success</p>}
         options={{
-          shouldCloseOnOverlayClick: false,
-          darkMode: true,
+          shouldCloseOnOverlayClick: true,
         }}
         style={{ closeButtonSize: "m" }}
       />
